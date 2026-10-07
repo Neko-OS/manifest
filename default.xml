@@ -21,11 +21,10 @@
   <include name="system.xml"/>
   <include name="vendor.xml"/>
 
-  <!-- AOSPA -->
-  <remote  name="aospa"
+  <!-- Neko-OS -->
+  <remote  name="neko"
            fetch=".."
-           review="gerrit.aospa.co"
-           revision="topaz"/>
+           revision="13"/>
 
   <remote  name="bitbucket"
            fetch="https://bitbucket.org"
@@ -49,7 +48,7 @@
            fetch="https://gitlab.com" />
 
   <include name="aosp.xml"/>
-  <include name="aospa.xml"/>
+  <include name="neko.xml"/>
   <include name="obsolete.xml"/>
 
 </manifest>

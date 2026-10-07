@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Build and Core -->
+  <remove-project name="platform/art" />
+  <project path="art" name="Neko-OS/android_art" remote="neko" />
+  <remove-project name="platform/bionic" />
+  <project path="bionic" name="Neko-OS/android_bionic" remote="neko" />
+  <remove-project name="platform/build/blueprint" />
+  <project path="build/blueprint" name="Neko-OS/android_build_blueprint" remote="neko" />
+  <remove-project name="platform/build_repo" />
+  <project path="build/make" name="Neko-OS/android_build" remote="neko" >
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <remove-project name="platform/build/soong" />
+  <project path="build/soong" name="Neko-OS/android_build_soong" remote="neko" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <remove-project name="platform/libcore" />
+  <project path="libcore" name="Neko-OS/android_libcore" remote="neko" />
+
+  <!-- Bootable -->
+  <remove-project name="platform/bootable/recovery" />
+  <project path="bootable/recovery" name="Neko-OS/android_bootable_recovery" remote="neko" />
+
+  <!-- Device -->
+  <remove-project name="device/qcom/common" />
+  <project path="device/qcom/common" name="Neko-OS/android_device_qcom_common" remote="neko" >
+    <linkfile dest="vendor/qcom/build/tasks/generate_extra_images.mk" src="generate_extra_images.mk"/>
+  </project>
+  <remove-project name="device/qcom/qssi" />
+  <project path="device/qcom/qssi" name="Neko-OS/android_device_qcom_qssi" remote="neko" />
+  <remove-project name="device/qcom/sepolicy" />
+  <project path="device/qcom/sepolicy" name="Neko-OS/android_device_qcom_sepolicy" remote="neko" />
+  <remove-project name="device/qcom/sepolicy_vndr" />
+  <project path="device/qcom/sepolicy_vndr" name="Neko-OS/android_device_qcom_sepolicy_vndr" remote="neko" />
+  <remove-project name="device/qcom/vendor-common" />
+  <project path="device/qcom/vendor-common" name="Neko-OS/android_device_qcom_vendor-common" remote="neko" />
+  <project path="device/qcom/kernelscripts" name="Neko-OS/android_kernel_build" remote="neko" >
+    <linkfile dest="vendor/qcom/build/tasks/kernel_definitions.mk" src="kernel_definitions.mk"/>
+  </project>
+
+  <!-- External -->
+  <project path="external/android-nn-driver" name="Neko-OS/android_external_android-nn-driver" remote="neko" />
+  <project path="external/armnn" name="Neko-OS/android_external_armnn" remote="neko" />
+  <remove-project name="platform/external/arm-optimized-routines" />
+  <project path="external/arm-optimized-routines" name="Neko-OS/android_external_arm-optimized-routines" remote="neko" />
+  <remove-project name="platform/external/erofs-utils" />
+  <project path="external/erofs-utils" name="platform/external/erofs-utils" remote="aosp" revision="f3669fe94b327235b033c2b6a88a6a28d586cff8" />
+  <remove-project name="platform/external/fastrpc" />
+  <project path="external/fastrpc" name="Neko-OS/android_external_fastrpc" remote="neko" />
+  <remove-project name="platform/external/f2fs-tools" />
+  <project path="external/f2fs-tools" name="platform/external/f2fs-tools" remote="aosp" revision="59381daac28229894d70bbf3d9ff4fd3d13541ab" />
+  <remove-project name="platform/external/jemalloc_new" />
+  <project path="external/jemalloc_new" name="Neko-OS/android_external_jemalloc-new" remote="neko" />
+  <remove-project name="platform/external/libjpeg-turbo" />
+  <project path="external/libjpeg-turbo" name="Neko-OS/android_external_libjpeg-turbo" remote="neko" />
+  <remove-project name="platform/external/libpng" />
+  <project path="external/libpng" name="Neko-OS/android_external_libpng" remote="neko" />
+  <remove-project name="platform/external/libvpx" />
+  <project path="external/libvpx" name="Neko-OS/android_external_libvpx" remote="neko" />
+  <remove-project name="platform/external/skia" />
+  <project path="external/skia" name="Neko-OS/android_external_skia" remote="neko" />
+  <remove-project name="platform/external/sqlite" />
+  <project path="external/sqlite" name="Neko-OS/android_external_sqlite" remote="neko" />
+  <remove-project name="platform/external/tinycompress" />
+  <project path="external/tinycompress" name="Neko-OS/android_external_tinycompress" remote="neko" />
+  <remove-project name="platform/external/webp" />
+  <project path="external/webp" name="Neko-OS/android_external_webp" remote="neko" />
+  <remove-project name="platform/external/wpa_supplicant_8" />
+  <project path="external/wpa_supplicant_8" name="Neko-OS/android_external_wpa_supplicant_8" remote="neko" />
+  <remove-project name="platform/external/zlib" />
+  <project path="external/zlib" name="Neko-OS/android_external_zlib" remote="neko" />
+
+  <!-- Frameworks -->
+  <remove-project name="platform/frameworks/av" />
+  <project path="frameworks/av" name="Neko-OS/android_frameworks_av" remote="neko" />
+  <remove-project name="platform/frameworks/base" />
+  <project path="frameworks/base" name="Neko-OS/android_frameworks_base" remote="neko" />
+  <remove-project name="platform/frameworks/libs/systemui" />
+  <project path="frameworks/libs/systemui" name="Neko-OS/android_frameworks_libs_systemui" remote="neko" />
+  <remove-project name="platform/frameworks/native" />
+  <project path="frameworks/native" name="Neko-OS/android_frameworks_native" remote="neko" />
+  <remove-project name="platform/frameworks/opt/net/wifi" />
+  <project path="frameworks/opt/net/wifi" name="Neko-OS/android_frameworks_opt_net_wifi" remote="neko" />
+  <remove-project name="platform/frameworks/opt/telephony" />
+  <project path="frameworks/opt/telephony" name="Neko-OS/android_frameworks_opt_telephony" remote="neko" />
+  <remove-project name="platform/frameworks/proto_logging" />
+  <project path="frameworks/proto_logging" name="Neko-OS/android_frameworks_proto_logging" remote="neko" />
+
+  <!-- Hardware -->
+  <remove-project name="platform/hardware/interfaces" />
+  <project path="hardware/interfaces" name="Neko-OS/android_hardware_interfaces" remote="neko" />
+  <remove-project name="platform/hardware/libhardware" />
+  <project path="hardware/libhardware" name="Neko-OS/android_hardware_libhardware" remote="neko" />
+  <remove-project name="platform/hardware/qcom/wlan" />
+  <project path="hardware/qcom/wlan" name="Neko-OS/android_hardware_qcom_wlan" remote="neko" />
+  <remove-project name="platform/hardware/st/nfc" />
+  <project path="hardware/st/nfc" name="Neko-OS/android_hardware_st_nfc" remote="neko" />
+
+  <!-- Hardware (Lineage) -->
+  <project path="hardware/lineage/compat" name="Neko-OS/android_hardware_lineage_compat" remote="neko" />
+
+  <!-- Kernel -->
+  <remove-project name="kernel/configs" />
+  <project path="kernel/configs" name="Neko-OS/android_kernel_configs" remote="neko" />
+
+  <!-- Manifest -->
+  <project path="manifest" name="Neko-OS/manifest" remote="neko" />
+
+  <!-- Packages (Neko-OS) -->
+  <project path="packages/apps/NekoDoze" name="Neko-OS/android_packages_apps_NekoDoze" remote="neko" />
+  <project path="packages/apps/NekoHub" name="Neko-OS/android_packages_apps_NekoHub" remote="neko" />
+  <project path="packages/apps/NekoPapers" name="Neko-OS/android_packages_apps_NekoPapers" remote="neko" />
+  <project path="packages/apps/NekoSense" name="Neko-OS/android_packages_apps_NekoSense" remote="neko" />
+  <project path="packages/apps/Neko/SystemUI" name="Neko-OS/android_packages_apps_Neko_SystemUI" remote="neko" />
+  <project path="packages/resources/devicesettings" name="Neko-OS/android_packages_resources_devicesettings" remote="neko" />
+
+  <!-- Packages -->
+  <remove-project name="platform/packages/apps/CarrierConfig" />
+  <project path="packages/apps/CarrierConfig" name="Neko-OS/android_packages_apps_CarrierConfig" remote="neko" />
+  <remove-project name="platform/packages/apps/Launcher3" />
+  <project path="packages/apps/Launcher3" name="Neko-OS/android_packages_apps_Launcher3" remote="neko" />
+  <remove-project name="platform/packages/apps/Nfc" />
+  <project path="packages/apps/Nfc" name="Neko-OS/android_packages_apps_Nfc" remote="neko" />
+  <remove-project name="platform/packages/apps/Settings" />
+  <project path="packages/apps/Settings" name="Neko-OS/android_packages_apps_Settings" remote="neko" />
+  <remove-project name="platform/packages/apps/WallpaperPicker2" />
+  <project path="packages/apps/WallpaperPicker2" name="Neko-OS/android_packages_apps_WallpaperPicker2" remote="neko" />
+  <remove-project name="platform/packages/modules/Bluetooth" />
+  <project path="packages/modules/Bluetooth" name="Neko-OS/android_packages_modules_Bluetooth" remote="neko" />
+  <remove-project name="platform/packages/modules/Connectivity" />
+  <project path="packages/modules/Connectivity" name="Neko-OS/android_packages_modules_Connectivity" remote="neko" />
+  <remove-project name="platform/packages/modules/common" />
+  <project path="packages/modules/common" name="Neko-OS/android_packages_modules_common" remote="neko" />
+  <remove-project name="platform/packages/modules/Wifi" />
+  <project path="packages/modules/Wifi" name="Neko-OS/android_packages_modules_Wifi" remote="neko" />
+  <remove-project name="platform/packages/providers/MediaProvider" />
+  <project path="packages/providers/MediaProvider" name="Neko-OS/android_packages_providers_MediaProvider" remote="neko" />
+  <remove-project name="platform/packages/providers/TelephonyProvider" />
+  <project path="packages/providers/TelephonyProvider" name="Neko-OS/android_packages_providers_TelephonyProvider" remote="neko" />
+  <remove-project name="platform/packages/services/Telecomm" />
+  <project path="packages/services/Telecomm" name="Neko-OS/android_packages_services_Telecomm" remote="neko" />
+  <remove-project name="platform/packages/services/Telephony" />
+  <project path="packages/services/Telephony" name="Neko-OS/android_packages_services_Telephony" remote="neko" />
+
+  <!-- Prebuilts (Neko-OS) -->
+  <project path="prebuilts/extract-tools" name="Neko-OS/android_prebuilts_extract-tools" remote="neko" />
+
+  <!-- Repainter (kdrag0n) -->
+  <project path="packages/apps/RepainterServicePriv" name="kdrag0n/android_packages_apps_RepainterServicePriv" remote="github" revision="main" />
+
+  <!-- System -->
+  <remove-project name="platform/system/core" />
+  <project path="system/core" name="Neko-OS/android_system_core" remote="neko" />
+  <remove-project name="platform/system/chre" />
+  <project path="system/chre" name="Neko-OS/android_system_chre" remote="neko" />
+  <remove-project name="platform/system/libhidl" />
+  <project path="system/libhidl" name="Neko-OS/android_system_libhidl" remote="neko" />
+  <remove-project name="platform/system/media" />
+  <project path="system/media" name="Neko-OS/android_system_media" remote="neko" />
+  <remove-project name="platform/system/memory/lmkd" />
+  <project path="system/memory/lmkd" name="Neko-OS/android_system_memory_lmkd" remote="neko" />
+  <remove-project name="platform/system/qcom" />
+  <project path="vendor/qcom/opensource/softap" name="Neko-OS/android_system_qcom" remote="neko" />
+  <remove-project name="platform/system/security" />
+  <project path="system/security" name="Neko-OS/android_system_security" remote="neko" />
+  <remove-project name="platform/system/sepolicy" />
+  <project path="system/sepolicy" name="Neko-OS/android_system_sepolicy" remote="neko" />
+  <remove-project name="platform/system/update_engine" />
+  <project path="system/update_engine" name="Neko-OS/android_system_update_engine" remote="neko" />
+  <remove-project name="platform/system/vold" />
+  <project path="system/vold" name="Neko-OS/android_system_vold" remote="neko" />
+
+  <!-- Tools (Neko-OS) -->
+  <project path="tools/extract-utils" name="Neko-OS/android_tools_extract-utils" remote="neko" />
+
+  <!-- Vendor (Neko-OS) -->
+  <project path="vendor/neko" name="Neko-OS/android_vendor_neko" remote="neko" >
+    <linkfile src="build.sh" dest="rom-build.sh" />
+  </project>
+  <project path="vendor/neko/apps/NekoThemePicker" name="Neko-OS/vendor_neko_apps_NekoThemePicker" remote="neko" />
+  <!-- TODO(Neko-OS): fork ThankYouMario/android_vendor_aospa_prebuilt to Neko-OS/android_vendor_neko_prebuilt, then switch remote to neko -->
+  <project path="vendor/neko/prebuilt" name="android_vendor_aospa_prebuilt" remote="blobs-gitlab" />
+  <project path="vendor/neko/translations" name="Neko-OS/android_vendor_neko_translations" remote="neko" />
+  <project path="vendor/google/gms" name="android_vendor_google_gms" remote="blobs-gitlab" />
+  <project path="vendor/google/pixel" name="android_vendor_google_pixel" remote="blobs" />
+  <project path="vendor/qcom/common" name="proprietary_vendor_qcom_common" remote="blobs" />
+  <project path="vendor/qcom/sdclang" name="proprietary_vendor_qcom_sdclang" remote="blobs" revision="disabled" />
+
+  <!-- Vendor (QCOM) -->
+  <remove-project name="platform/vendor/codeaurora/telephony" />
+  <project path="vendor/codeaurora/commonsys/telephony" name="Neko-OS/android_vendor_codeaurora_commonsys_telephony" remote="neko" />
+  <remove-project name="platform/vendor/nxp/opensource/packages/apps/Nfc" />
+  <project path="vendor/nxp/opensource/commonsys/packages/apps/Nfc" name="Neko-OS/android_vendor_nxp_opensource_packages_apps_Nfc" remote="neko" />
+  <remove-project name="platform/vendor/qcom-opensource/bluetooth-commonsys-intf" />
+  <project path="vendor/qcom/opensource/commonsys-intf/bluetooth" name="Neko-OS/android_vendor_qcom-opensource_bluetooth-commonsys-intf" remote="neko" />
+  <remove-project name="platform/vendor/qcom-opensource/display-commonsys-intf" />
+  <project path="vendor/qcom/opensource/commonsys-intf/display" name="Neko-OS/android_vendor_qcom_opensource_commonsys-intf_display" remote="neko" >
+    <linkfile dest="vendor/qcom/defs/product-defs/system/display-product-system.mk" src="config/display-product-system.mk" />
+    <linkfile dest="vendor/qcom/defs/product-defs/vendor/display-interfaces-product.mk" src="config/display-interfaces-product.mk" />
+  </project>
+  <project path="vendor/qcom/opensource/commonsys-intf/wfd" name="Neko-OS/android_vendor_qcom_opensource_commonsys-intf_wfd" remote="neko" />
+  <remove-project name="platform/vendor/qcom-opensource/display-commonsys" />
+  <project path="vendor/qcom/opensource/commonsys/display" name="Neko-OS/android_vendor_qcom-opensource_display-commonsys" remote="neko" />
+  <remove-project name="platform/vendor/qcom-opensource/data-ipa-cfg-mgr" />
+  <project path="vendor/qcom/opensource/data-ipa-cfg-mgr" name="Neko-OS/android_vendor_qcom_opensource_data-ipa-cfg-mgr" remote="neko" />
+  <project path="vendor/qcom/opensource/data-ipa-cfg-mgr-legacy" name="Neko-OS/android_vendor_qcom_opensource_data-ipa-cfg-mgr" remote="neko" revision="13-legacy" />
+  <remove-project name="platform/vendor/qcom-opensource/dataservices" />
+  <project path="vendor/qcom/opensource/dataservices" name="Neko-OS/android_vendor_qcom-opensource_dataservices" remote="neko" />
+  <remove-project name="platform/vendor/qcom-opensource/interfaces" />
+  <project path="vendor/qcom/opensource/interfaces" name="Neko-OS/android_vendor_qcom-opensource_interfaces" remote="neko" />
+  <remove-project name="platform/vendor/qcom-opensource/power" />
+  <project path="vendor/qcom/opensource/power" name="Neko-OS/android_vendor_qcom-opensource_power" remote="neko" />
+  <remove-project name="platform/vendor/qcom-opensource/packages/apps/Bluetooth" />
+  <project path="vendor/qcom/opensource/commonsys/packages/apps/Bluetooth" name="Neko-OS/android_vendor_qcom-opensource_packages_apps_Bluetooth" remote="neko" />
+  <remove-project name="platform/vendor/qcom-opensource/system/bt" />
+  <project path="vendor/qcom/opensource/commonsys/system/bt" name="Neko-OS/android_vendor_qcom_opensource_commonsys_system_bt" remote="neko" />
+  <remove-project name="platform/vendor/qcom-opensource/vibrator" />
+  <project path="vendor/qcom/opensource/vibrator" name="Neko-OS/android_vendor_qcom-opensource_vibrator" remote="neko" />
+  <remove-project name="platform/vendor/qcom-opensource/usb" />
+  <project path="vendor/qcom/opensource/usb" name="Neko-OS/android_vendor_qcom-opensource_usb" remote="neko" />
+  <remove-project name="platform/hardware/qcom/thermal" />
+  <project path="vendor/qcom/opensource/thermal-hal" name="Neko-OS/android_hardware_qcom_thermal" remote="neko" />
+
+</manifest>

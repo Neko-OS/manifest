@@ -1,9 +1,11 @@
-# Paranoid Android #
+# Neko-OS #
+
+Android 13 based custom ROM, forked from Paranoid Android (Topaz).
 
 ## Setting up your machine ##
 
 You must be running a 64-bit Linux distribution and must have installed some packages to build
-Paranoid Android. Google recommends using [Ubuntu](http://www.ubuntu.com/download/desktop) for
+Neko-OS. Google recommends using [Ubuntu](http://www.ubuntu.com/download/desktop) for
 this and provides instructions for setting up the system (with Ubuntu-specific commands) on
 [the Android Open Source Project website](https://source.android.com/source/initializing.html#setting-up-a-linux-build-environment).
 
@@ -41,7 +43,7 @@ $ cd WORKSPACE
 
 # Install Repo in the created directory
 # Use a real name/email combination, if you intend to submit patches
-$ repo init -u https://github.com/AOSPA/manifest -b topaz
+$ repo init -u https://github.com/Neko-OS/manifest -b 13
 ```
 
 ### Downloading the source tree ###
@@ -69,7 +71,7 @@ a large change that spans across multiple projects.
 ```bash
 # Specify one or more projects by either name or path
 
-# For example, enter AOSPA/android_frameworks_base or
+# For example, enter Neko-OS/android_frameworks_base or
 # frameworks/base to sync the frameworks/base repository
 
 $ repo sync PROJECT
@@ -92,7 +94,7 @@ $ ./rom-build.sh DEVICE
 
 We're open source and patches are always welcome!
 
-You can see the status of all patches at [Gerrit Code Review](https://gerrit.aospa.co/).
+Track progress and open pull requests on [GitHub](https://github.com/Neko-OS).
 
 ### Following the standard workflow ###
 
@@ -101,11 +103,11 @@ You can see the status of all patches at [Gerrit Code Review](https://gerrit.aos
 $ cd WORKSPACE
 
 # Create a new branch on the specific project you are going to work on
-# For example, `repo start fix-clock AOSPA/android_frameworks_base`
-$ repo start BRANCH AOSPA/PROJECT
+# For example, `repo start fix-clock Neko-OS/android_frameworks_base`
+$ repo start BRANCH Neko-OS/PROJECT
 # You can also use the project path in place of the project name.
 # The PROJECT_DIR is the portion after the android_ prefix on
-# the AOSPA Github.  For example, android_frameworks_base translates
+# the Neko-OS Github.  For example, android_frameworks_base translates
 # into the directory frameworks/base.
 # This applies to all repo commands that reference projects.
 $ repo start BRANCH PROJECT_DIR
@@ -120,56 +122,15 @@ $ cd PROJECT_DIR
 $ git add -A
 $ git commit -a -s
 
-# Upload your changes
-$ cd WORKSPACE
-$ repo upload AOSPA/PROJECT
-# or
-$ repo upload PROJECT_DIR
-```
-### Using plain git to upload ###
-
-```bash
-# Go inside the project you are working on
-$ cd PROJECT_DIR
-
-# Make your changes
-...
-
-# Commit all your changes
-$ git add -A
-$ git commit -a -s
-
-# Upload your changes
-$ git push ssh://USERNAME@gerrit.aospa.co:29418/AOSPA/PROJECT HEAD:refs/for/topaz
-```
-
-### Extra commands for Gerrit ###
-
-```bash
-# If you desire to upload a change as private use the below command
-$ git push ssh://USERNAME@gerrit.aospa.co:29418/AOSPA/PROJECT HEAD:refs/for/topaz%private
-
-# If you desire to upload a change as W.I.P(Work in Progress) use the below command
-$ git push ssh://USERNAME@gerrit.aospa.co:29418/AOSPA/PROJECT HEAD:refs/for/topaz%wip
-
-# After that, if you want to make the commit public you can use the UI tools on AOSPA Gerrit website, or use the below command
-$ git push ssh://USERNAME@gerrit.aospa.co:29418/AOSPA/PROJECT HEAD:refs/for/topaz%remove-private
-
-# If you want to unset the W.I.P status on your commit, you can use UI tools on AOSPA Gerrit website, or use the below command
-$ git push ssh://USERNAME@gerrit.aospa.co:29418/AOSPA/PROJECT HEAD:refs/for/topaz%ready
+# Push to your fork and open a pull request against the `13` branch
+$ git push origin HEAD:BRANCH
 ```
 
 ### Making additional changes ###
 
-If you are going to make more changes, you just have to repeat the steps (except for `repo start`
-which you should not repeat) while using `git commit --amend` instead of `git commit -a -s` so that
-you avoid having multiple commits for this single change. Gerrit will then recognize these changes
-as a new patch set and figure out everything for you when you upload.
-
-### Squashing multiple commits ###
-
-Your patches should be single commits. If you have multiple commits laying around, squash them by
-running `git rebase -i HEAD~<commit-count>` before uploading.
+If you are going to make more changes, just amend or add commits on the same branch and push
+again. Keep each pull request to a single logical change and squash multiple WIP commits with
+`git rebase -i HEAD~<commit-count>` before opening the PR.
 
 ### Writing good commit messages ###
 
@@ -186,10 +147,8 @@ keep it to 50 characters when possible as it is used in various logs, including 
 
 ## Working on translations ##
 
-If you want to help on translating PA to your desired language(s), you can use Crowdin
-which provides an easy interface to submit translations.
-
-For accessing PA´s Crowdin, visit http://crowdin.aospa.co.
+Translations for Neko-OS are handled through the `vendor/neko/translations` repository.
+Open a pull request there to contribute translations.
 
 ## Using our assets ##
 
@@ -199,6 +158,9 @@ Our codebase is licensed under Apache License, Version 2.0 unless otherwise spec
 License 2.0 allows a variety of actions on the content as long as licensing and copyright
 notices are retained and included with the code and your changes to the codebase are stated.
 
+This project is forked from Paranoid Android (AOSPA, Topaz / Android 13).
+Upstream copyright and license notices are retained.
+
 You can read the full license text at http://www.apache.org/licenses/LICENSE-2.0
 
 ### Images & other assets ###
@@ -207,9 +169,9 @@ Unless otherwise specified, all our assets, including but not limited to images,
 under Creative Commons Attribution-NonCommercial 4.0 International, or CC BY-NC 4.0 for short.
 This means that you are allowed to modify the aforementioned assets in any way you want and
 you are free to share the originals and/or the modified work. However, you are not allowed
-to use the assets for commercial purposes and you must provide attribution at all times which
-means you have to include a short note about the license used (CC BY-NC 4.0), the original
-author/authors (Paranoid Android Project or AOSPA) and inform about any changes that have been
-made. A link to the [website](http://aospa.co/) should usually be included as well.
+to use the assets for commercial purposes and you must provide attribution at all times.
+
+Neko-OS branding is owned by the Neko-OS project. Original Paranoid Android / AOSPA assets
+remain attributed to their original authors (Paranoid Android Project / AOSPA).
 
 You can reach the full legal text at http://creativecommons.org/licenses/by-nc/4.0/
