@@ -27,7 +27,7 @@
   <remove-project name="platform/external/f2fs-tools" />
   <project path="external/f2fs-tools" name="platform/external/f2fs-tools" remote="aosp" />
   <remove-project name="platform/external/gfxstream-protocols" />
-  <project path="external/gfxstream-protocols" name="platform/external/gfxstream-protocols" remote="aosp" />
+  <project path="external/gfxstream-protocols" name="platform/external/gfxstream-protocols" remote="aosp" revision="refs/tags/android-14.0.0_r45" />
   <remove-project name="platform/external/gptfdisk" />
   <project path="external/gptfdisk" name="platform/external/gptfdisk" remote="aosp" />
   <remove-project name="platform/external/hyphenation-patterns" />
